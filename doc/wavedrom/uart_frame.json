@@ -1,0 +1,4 @@
+{reg: [
+  {bits: 8, name: "STX"},
+  {bits: 8, name: "STX"}
+]config: {hspace: width, lanes: 2}}
