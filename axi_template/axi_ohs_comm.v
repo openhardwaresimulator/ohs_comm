@@ -4,7 +4,7 @@
   Date: March 2024
   Revision: 1.0
   History: 
-    1.0: Model created
+    1.0: Module created
 **/
 
 `default_nettype none
@@ -14,26 +14,31 @@
 module axi_ohs_comm #(
 	parameter	S_AXI_ADDR_WIDTH = 4
 )(
-	input wire s_axi_aclk, 
+		input wire s_axi_aclk, 
 	input wire s_axi_aresetn, 
 
+	/* address write if */
   input wire [S_AXI_ADDR_WIDTH - 1:0] s_axi_awaddr,
   input wire s_axi_awvalid,
 	output wire s_axi_awready,
-  
+
+  /* data write if */
 	input wire [`S_AXI_DATA_WIDTH-1:0] s_axi_wdata,
 	input wire [`S_AXI_DATA_WIDTH/8-1:0] s_axi_wstrb,
 	input wire s_axi_wvalid,
   output wire s_axi_wready,
-	
+
+	/* status */
 	output wire [1:0] s_axi_bresp,
 	output reg s_axi_bvalid,
 	input wire s_axi_bready,
 
+	/* address read if */
 	input wire [S_AXI_ADDR_WIDTH - 1:0] s_axi_araddr,
   input  wire s_axi_arvalid,
   output wire s_axi_arready,
 
+	/* data read if */
   output wire [`S_AXI_DATA_WIDTH-1:0] s_axi_rdata,	
   output wire [1:0] s_axi_rresp,
 	output reg s_axi_rvalid,

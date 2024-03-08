@@ -2,7 +2,7 @@
 project/
 
 # vitis wks
-vitis/*
+vitis/
 
 
 # simulation outputs
